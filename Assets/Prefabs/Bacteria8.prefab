@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3805552836231516806}
   - component: {fileID: 4074327900833577792}
+  - component: {fileID: 2607446646831766953}
   m_Layer: 0
   m_Name: Bacteria8
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2607446646831766953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030429509267477353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702c45d9c902928439ae1e56d1d4679b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xWobble: 0.002
+  yWobble: 0.002
