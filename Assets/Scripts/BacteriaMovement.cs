@@ -26,7 +26,7 @@ public class BacteriaMovement : MonoBehaviour
         minLocalScale = standardLocalScale - new Vector3(xScaleExcess, yScaleExcess, 0);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
         Wobble();
