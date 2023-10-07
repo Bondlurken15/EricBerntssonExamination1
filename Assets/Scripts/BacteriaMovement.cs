@@ -57,7 +57,7 @@ public class BacteriaMovement : MonoBehaviour
         }
         else
         {
-            transform.localScale = transform.localScale + new Vector3(Random.Range(-xWobble, xWobble), Random.Range(-yWobble, yWobble), 0);
+            transform.localScale = transform.localScale + new Vector3(Random.Range(-xWobble, xWobble), Random.Range(-yWobble, yWobble));
         }
     }
 }

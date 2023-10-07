@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Seek : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform playerTransform;
+    [SerializeField] float speed = 0.005f;
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // CHALLENGE: This could be more efficient
-        GameObject moveTowardsThis = GameObject.FindWithTag("Player");
-        transform.position = Vector3.MoveTowards(transform.position, moveTowardsThis.transform.position, 0.005f);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
         // put in player's position
     }
 }
