@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6769924220569725005}
   - component: {fileID: 787429899294722189}
   - component: {fileID: 8340156169606362232}
-  - component: {fileID: 4525392133438521729}
+  - component: {fileID: 984837321886201448}
   m_Layer: 0
   m_Name: Bacteria4
   m_TagString: Friendly
@@ -142,7 +142,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.39
---- !u!50 &4525392133438521729
+--- !u!50 &984837321886201448
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
