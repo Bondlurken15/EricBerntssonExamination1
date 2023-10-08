@@ -12,7 +12,7 @@ public class Variety3 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) 
     {
-        if (other.gameObject.tag == "dontforgettoupdatethetag")
+        if (other.gameObject.tag == "Friendly")
         {
             print("got me");
             Destroy(other.gameObject);

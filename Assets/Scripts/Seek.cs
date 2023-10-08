@@ -10,7 +10,10 @@ public class Seek : MonoBehaviour
     void FixedUpdate()
     {
         // CHALLENGE: This could be more efficient
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+        if (playerTransform != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+        }
         // put in player's position
     }
 }
