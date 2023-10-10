@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Friendly
+  - Bacteria
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Blobs
     uniqueID: 3226735603
+    locked: 0
+  - name: Bacteria
+    uniqueID: 2049661079
     locked: 0
   - name: Default
     uniqueID: 0
