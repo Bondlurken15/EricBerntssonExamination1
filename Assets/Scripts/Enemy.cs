@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 maxScale = Vector3.one * growthMultiplier;
         
-        if (obj.transform.localScale.x <= maxScale.x || obj.transform.localScale.y <= maxScale.y)
+        if (obj.transform.localScale.x <= maxScale.x && obj.transform.localScale.y <= maxScale.y)
         {
             obj.transform.localScale *= growthMultiplier;
         }

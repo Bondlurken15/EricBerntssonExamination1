@@ -35,21 +35,27 @@ public class BacteriaMovement : MonoBehaviour
     {
         transform.position = transform.position + new Vector3(Random.Range(-xMove, xMove), Random.Range(-yMove, yMove));
 
-        if (transform.localScale.x > maxLocalScale.x)
+        if (transform.localScale.x > maxLocalScale.x ||
+            transform.localScale.x < minLocalScale.x ||
+            transform.localScale.y > maxLocalScale.y ||
+            transform.localScale.y < minLocalScale.y)
         {
-            transform.localScale = transform.localScale - new Vector3(xScaleCorrection, 0, 0);
-        }
-        if (transform.localScale.x < minLocalScale.x)
-        {
-            transform.localScale = transform.localScale + new Vector3(xScaleCorrection, 0, 0);
-        }
-        if (transform.localScale.y > maxLocalScale.y)
-        {
-            transform.localScale = transform.localScale - new Vector3(0, yScaleCorrection, 0);
-        }
-        if (transform.localScale.y < minLocalScale.y)
-        {
-            transform.localScale = transform.localScale + new Vector3(0, yScaleCorrection, 0);
+            if (transform.localScale.x > maxLocalScale.x)
+            {
+                transform.localScale = transform.localScale - new Vector3(xScaleCorrection, 0, 0);
+            }
+            if (transform.localScale.x < minLocalScale.x)
+            {
+                transform.localScale = transform.localScale + new Vector3(xScaleCorrection, 0, 0);
+            }
+            if (transform.localScale.y > maxLocalScale.y)
+            {
+                transform.localScale = transform.localScale - new Vector3(0, yScaleCorrection, 0);
+            }
+            if (transform.localScale.y < minLocalScale.y)
+            {
+                transform.localScale = transform.localScale + new Vector3(0, yScaleCorrection, 0);
+            }
         }
         else
         {
