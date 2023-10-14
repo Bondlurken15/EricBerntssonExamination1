@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    [SerializeField] Transform[] a;
-    [SerializeField] GameObject s;
-    
-    // Start is called before the first frame update
+    [Header("Enemy Spawn")]
+    [SerializeField] GameObject enemy;
+    [SerializeField] Vector2 enemySpawnPoints;
+    [SerializeField] float enemySpawnRate;
+    [SerializeField] float enemySpawnDelay;
+    [Header("Antidote Spawn")]
+    [SerializeField] GameObject antidote;
+    [SerializeField] Vector2 antidoteSpawnPoints;
+    [SerializeField] float antidoteSpawnRate;
+    [SerializeField] float antidoteSpawnDelay;
+
     void Start()
     {
-        InvokeRepeating("Dothis", 1, .5f);
+        InvokeRepeating("SpawnEnemy", enemySpawnDelay, enemySpawnRate);
+        InvokeRepeating("SpawnAntidote", antidoteSpawnDelay, antidoteSpawnRate);
     }
 
-    void Dothis()
+    void SpawnEnemy()
     {
-        Instantiate(a[4], transform.position, Quaternion.identity);
+        Instantiate(enemy, enemySpawnPoints, Quaternion.identity);
+        Debug.Log("Spawned Enemy");
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnAntidote()
     {
+        Instantiate(antidote, antidoteSpawnPoints, Quaternion.identity);
+        Debug.Log("Spawned Antidote");
     }
 }

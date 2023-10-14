@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
     [Header("Seek")]
-    [SerializeField] Transform playerTransform;
     [SerializeField] float speed = 0.005f;
     [Header("Growth")]
     [SerializeField] float growthMultiplier = 1.1f;
+
+    Transform playerTransform;
+
+    private void Start()
+    {
+        playerTransform = FindObjectOfType<Player>().transform;
+    }
 
     void FixedUpdate()
     {
@@ -39,6 +46,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(other.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (other.gameObject.tag == "Bacteria")
         {
