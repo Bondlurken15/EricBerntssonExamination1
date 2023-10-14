@@ -16,7 +16,7 @@ public class TimerScript : MonoBehaviour
         currentTime += Time.deltaTime;
         timerText.text = currentTime.ToString("00");
 
-        if (currentTime >= 30)
+        if (currentTime >= winTime)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

@@ -8,6 +8,14 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
+
+        transform.Translate(movementDirection * speed * Time.deltaTime, 0);
+
+        Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
+        transform.rotation = toRotation;
     }
 }
