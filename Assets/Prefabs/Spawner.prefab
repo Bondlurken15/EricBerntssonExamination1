@@ -45,10 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8966807382682514828, guid: e4f5613bc06bbb34d961599241e01335, type: 3}
-  enemySpawnPoints: {x: 0, y: 0}
-  enemySpawnRate: 5
-  enemySpawnDelay: 10
+  enemySpawnPoints:
+  - {x: -12, y: 12}
+  - {x: 12, y: -12}
+  enemySpawnDelay: 2
+  enemySpawnRate: 10
+  enemySpawnRateIncrease: 2
   antidote: {fileID: 6055671806162378033, guid: 86674832a3b0f4a41b517990cd3c0f1f, type: 3}
-  antidoteSpawnPoints: {x: 0, y: 0}
-  antidoteSpawnRate: 5
+  antidoteSpawnPoints:
+  - {x: -12, y: -12}
+  - {x: 12, y: 12}
   antidoteSpawnDelay: 5
+  antidoteSpawnRate: 15
+  antidoteSpawnRateIncrease: 2

@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163bbcaa06e9b584e880a505deb88b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 4425162202470187249, guid: 15f65fda4e9a28c4b8d0695ed92ace1b, type: 3}
-  speed: 1.5
+  speed: 1.2
   growthMultiplier: 1.8
 --- !u!70 &7279768466712311369
 CapsuleCollider2D:

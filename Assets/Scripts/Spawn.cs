@@ -6,14 +6,16 @@ public class Spawn : MonoBehaviour
 {
     [Header("Enemy Spawn")]
     [SerializeField] GameObject enemy;
-    [SerializeField] Vector2 enemySpawnPoints;
-    [SerializeField] float enemySpawnRate;
+    [SerializeField] Vector2[] enemySpawnPoints;
     [SerializeField] float enemySpawnDelay;
+    [SerializeField] float enemySpawnRate;
+    [SerializeField] float enemySpawnRateIncrease = 0.2f;
     [Header("Antidote Spawn")]
     [SerializeField] GameObject antidote;
-    [SerializeField] Vector2 antidoteSpawnPoints;
-    [SerializeField] float antidoteSpawnRate;
+    [SerializeField] Vector2[] antidoteSpawnPoints;
     [SerializeField] float antidoteSpawnDelay;
+    [SerializeField] float antidoteSpawnRate;
+    [SerializeField] float antidoteSpawnRateIncrease = 0.2f;
 
     void Start()
     {
@@ -23,13 +25,17 @@ public class Spawn : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemy, enemySpawnPoints, Quaternion.identity);
-        Debug.Log("Spawned Enemy");
+        int spawnPos = Random.Range(0, enemySpawnPoints.Length);
+        Instantiate(enemy, enemySpawnPoints[spawnPos], Quaternion.identity);
+
+        enemySpawnRate -= enemySpawnRateIncrease;
     }
 
     void SpawnAntidote()
     {
-        Instantiate(antidote, antidoteSpawnPoints, Quaternion.identity);
-        Debug.Log("Spawned Antidote");
+        int spawnPos = Random.Range(0, antidoteSpawnPoints.Length);
+        Instantiate(antidote, antidoteSpawnPoints[spawnPos], Quaternion.identity);
+
+        antidoteSpawnRate -= antidoteSpawnRateIncrease;
     }
 }
