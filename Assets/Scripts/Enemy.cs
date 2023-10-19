@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if (other.gameObject.tag == "Bacteria")
+        if (other.gameObject.tag == "Bacteria" || other.gameObject.tag == "Infected")
         {
             AddSize(other.gameObject);
         }

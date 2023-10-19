@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6710556710331455102}
   - component: {fileID: 7886205117742073492}
-  - component: {fileID: 1204726932235257453}
   - component: {fileID: 5047853728751899446}
+  - component: {fileID: 2579098480072204826}
   m_Layer: 0
   m_Name: Bacteria7
   m_TagString: Bacteria
@@ -87,26 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1204726932235257453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8266212643423325355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702c45d9c902928439ae1e56d1d4679b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xMove: 0.05
-  yMove: 0.05
-  xWobble: 0.002
-  yWobble: 0.002
-  xScaleExcess: 0.1
-  yScaleExcess: 0.1
-  xScaleCorrection: 0.005
-  yScaleCorrection: 0.005
 --- !u!50 &5047853728751899446
 Rigidbody2D:
   serializedVersion: 4
@@ -134,6 +114,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2579098480072204826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266212643423325355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1737144f75cec344b59c52fa18dc3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMove: 0.05
+  yMove: 0.05
+  xWobble: 0.002
+  yWobble: 0.002
+  xScaleExcess: 0.1
+  yScaleExcess: 0.1
+  xScaleCorrection: 0.005
+  yScaleCorrection: 0.005
 --- !u!1 &8824745755440850587
 GameObject:
   m_ObjectHideFlags: 0

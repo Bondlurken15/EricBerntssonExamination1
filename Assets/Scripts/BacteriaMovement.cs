@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BacteriaMovement : MonoBehaviour
@@ -18,9 +19,11 @@ public class BacteriaMovement : MonoBehaviour
     Vector3 standardLocalScale;
     Vector3 maxLocalScale;
     Vector3 minLocalScale;
+    string standardTag;
 
     void Start()
     {
+        standardTag = tag;
         standardLocalScale = transform.localScale;
         maxLocalScale = standardLocalScale + new Vector3(xScaleExcess, yScaleExcess, 0);
         minLocalScale = standardLocalScale - new Vector3(xScaleExcess, yScaleExcess, 0);
@@ -28,13 +31,16 @@ public class BacteriaMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Wobble();
+        if (tag != "Infected")
+        {
+            ScaleWobble();
+        }
+
+        MoveWobble();
     }
 
-    void Wobble()
+    void ScaleWobble()
     {
-        transform.position = transform.position + new Vector3(Random.Range(-xMove, xMove), Random.Range(-yMove, yMove));
-
         if (transform.localScale.x > maxLocalScale.x ||
             transform.localScale.x < minLocalScale.x ||
             transform.localScale.y > maxLocalScale.y ||
@@ -60,6 +66,30 @@ public class BacteriaMovement : MonoBehaviour
         else
         {
             transform.localScale = transform.localScale + new Vector3(Random.Range(-xWobble, xWobble), Random.Range(-yWobble, yWobble));
+        }
+    }
+
+    void MoveWobble()
+    {
+        transform.position = transform.position + new Vector3(Random.Range(-xMove, xMove), Random.Range(-yMove, yMove));
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (standardTag != "Antidote" && standardTag != "Enemy")
+            {
+                tag = "Infected";
+            }
+        }
+        if (other.gameObject.tag == "Antidote")
+        {
+            if (standardTag != "Antidote" && standardTag != "Enemy")
+            {
+                tag = "Bacteria";
+                
+            }
         }
     }
 }
